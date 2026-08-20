@@ -51,8 +51,8 @@ export default function Sidebar() {
       <div data-sidebar="header" className="flex flex-col gap-2 p-2 px-3 pt-6">
         <Link className="flex flex-row items-center gap-2 px-3" href="/">
           <img src="/static/images/logo_green.svg" className="block h-7" style={{ width: 'auto' }} alt="rockcoop" />
-          <svg viewBox="0 0 240 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block text-gray-900 w-28">
-            <text x="2" y="38" fontFamily="Pretendard,Arial,sans-serif" fontSize="40" fontWeight="800" fill="currentColor" letterSpacing="-1">rockcoop</text>
+          <svg viewBox="0 0 120 26" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block text-gray-900 h-6">
+            <text x="2" y="21" fontFamily="Pretendard,Inter,Arial,sans-serif" fontSize="22" fontWeight="700" fill="currentColor" letterSpacing="-0.5">rockcoop</text>
           </svg>
         </Link>
       </div>
