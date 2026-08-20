@@ -50,10 +50,8 @@ export default function Sidebar() {
     <div data-sidebar="sidebar" className="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow">
       <div data-sidebar="header" className="flex flex-col gap-2 p-2 px-3 pt-6">
         <Link className="flex flex-row items-center gap-2 px-3" href="/">
-          <img src="/static/images/logo_green.svg" className="block h-7" style={{ width: 'auto' }} alt="rockcoop" />
-          <svg viewBox="0 0 120 26" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block text-gray-900 h-6">
-            <text x="2" y="21" fontFamily="Pretendard,Inter,Arial,sans-serif" fontSize="22" fontWeight="700" fill="currentColor" letterSpacing="-0.5">rockcoop</text>
-          </svg>
+          <img src="/static/images/logo_blip.svg" className="block h-7" alt="blip" />
+          <span className="text-sm font-bold tracking-[-0.025rem] text-gray-900">blip</span>
         </Link>
       </div>
       <div data-sidebar="content" className="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden mt-6">
