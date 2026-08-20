@@ -50,9 +50,3 @@
     border-color: var(--sidebar-border);
   }
 }
-
-@media (min-width: 768px) {
-  .md\:w-\[calc\(100\%-var\(--sidebar-width\)\)\] {
-    width: 100%;
-  }
-}

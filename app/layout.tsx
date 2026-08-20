@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Sidebar />
             </div>
           </div>
-          <div className="w-full flex-1 md:w-[calc(100%-var(--sidebar-width))]">
+          <div className="w-full flex-1">
             {children}
           </div>
         </div>
