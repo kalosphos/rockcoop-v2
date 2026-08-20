@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sidebar-width: 16rem;
+    --sidebar-width-icon: 3rem;
+    --header-height: 3.5rem;
+    --mobile-header-height: 3.125rem;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 90%;
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-medinum {
+    font-family: var(--font-pretendard), system-ui, sans-serif;
+    font-weight: 500;
+  }
+  .bg-blip-primary {
+    background-color: #ff002e;
+  }
+  .bg-sidebar {
+    background-color: var(--sidebar);
+  }
+  .text-sidebar-foreground {
+    color: var(--sidebar-foreground);
+  }
+  .border-sidebar-border {
+    border-color: var(--sidebar-border);
+  }
+}

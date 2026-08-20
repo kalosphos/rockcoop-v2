@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /test
+Disallow: /en/test
+Disallow: /ja/test
+Disallow: /jp
+Disallow: /error
+Disallow: /en/error
+Disallow: /jp/error
