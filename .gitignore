@@ -1,3 +1,4 @@
 /.next
 /public/static/_next
 /.next/cache
+node_modules
