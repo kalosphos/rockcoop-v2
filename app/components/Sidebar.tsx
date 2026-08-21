@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 const menuItems = [
@@ -46,6 +47,8 @@ const icons: Record<string, JSX.Element> = {
 };
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <div data-sidebar="sidebar" className="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow">
       <div data-sidebar="header" className="flex flex-col gap-2 p-2 px-3 pt-6">
@@ -61,19 +64,28 @@ export default function Sidebar() {
               <div data-sidebar="group" className="relative flex w-full min-w-0 flex-col px-3">
                 <div data-sidebar="group-content" className="w-full text-sm">
                   <ul data-sidebar="menu" className="flex w-full min-w-0 flex-col gap-2">
-                    {menuItems.map((item) => (
-                      <li key={item.href} data-sidebar="menu-item" className="group/menu-item relative">
-                        <Link
-                          href={item.href}
-                          data-sidebar="menu-button"
-                          data-size="default"
-                          className="peer/menu-button flex w-full items-center gap-2 overflow-hidden font-medium rounded-md text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sm h-10 px-3 py-[0.62rem] [&>svg]:size-5 text-cool-gray-600"
-                        >
-                          {icons[item.icon]}
-                          <span className="text-sm leading-5 tracking-[-0.025rem]">{item.label}</span>
-                        </Link>
-                      </li>
-                    ))}
+                    {menuItems.map((item) => {
+                      const isActive = pathname === item.href;
+                      return (
+                        <li key={item.href} data-sidebar="menu-item" className="group/menu-item relative">
+                          <Link
+                            href={item.href}
+                            data-sidebar="menu-button"
+                            data-size="default"
+                            className={`peer/menu-button flex w-full items-center gap-2 overflow-hidden font-medium rounded-md text-left outline-none ring-sidebar-ring transition-[width,height,padding] focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 ${
+                              isActive
+                                ? 'bg-sidebar-accent text-gray-900 [&>svg]:text-gray-900'
+                                : 'text-cool-gray-600 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground [&>svg]:text-cool-gray-600 hover:[&>svg]:text-sidebar-accent-foreground'
+                            } text-sm h-10 px-3 py-[0.62rem] [&>svg]:size-5`}
+                          >
+                            {icons[item.icon]}
+                            <span className={`text-sm leading-5 tracking-[-0.025rem] ${
+                              isActive ? 'text-gray-900' : 'text-cool-gray-600'
+                            }`}>{item.label}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -86,7 +98,7 @@ export default function Sidebar() {
           <img alt="challenge-icon" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" className="-mt-1 w-[2.7849rem] object-contain" style={{ color: 'transparent' }} src="/static/images/icons/thread/curiosity2.png" />
           <div>
             <p className="text-sm font-bold tracking-[-0.025rem]">덕력 레벨업 ZONE</p>
-            <p className="text-xs tracking-[-0.025rem] text-white/80">내 덕력 레벨 확인하기</p>
+            <p className="text-xs tracking-[-0.025rem] text-white/90">내 덕력 레벨 확인하기</p>
           </div>
         </button>
       </div>
