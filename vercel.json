@@ -1,0 +1,11 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/artists", "destination": "/artists.html" },
+    { "source": "/kpop-now", "destination": "/kpop-now.html" },
+    { "source": "/schedule", "destination": "/schedule.html" },
+    { "source": "/challenge", "destination": "/challenge.html" },
+    { "source": "/explore", "destination": "/explore.html" },
+    { "source": "/community", "destination": "/community.html" }
+  ]
+}
